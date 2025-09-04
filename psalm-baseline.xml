@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0">
+  <file src="framework/functions.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$attribute]]></code>
+      <code><![CDATA[$classOrObject]]></code>
+      <code><![CDATA[$classOrObject]]></code>
+      <code><![CDATA[$classOrObject]]></code>
+    </ArgumentTypeCoercion>
+    <DeprecatedFunction>
+      <code><![CDATA[array_column_of_list_or_map($filtersList, $columnKey)]]></code>
+    </DeprecatedFunction>
+    <LessSpecificReturnStatement>
+      <code><![CDATA[$_ENV[$variable] ?? $default]]></code>
+    </LessSpecificReturnStatement>
+    <LessSpecificReturnType>
+      <code><![CDATA[?string]]></code>
+    </LessSpecificReturnType>
+    <MismatchingDocblockParamType>
+      <code><![CDATA[class-string<T>|T]]></code>
+      <code><![CDATA[class-string<T>|T]]></code>
+    </MismatchingDocblockParamType>
+    <MixedArgument>
+      <code><![CDATA[$filtersList]]></code>
+      <code><![CDATA[$map]]></code>
+    </MixedArgument>
+    <MixedAssignment>
+      <code><![CDATA[$filtersList]]></code>
+      <code><![CDATA[$map]]></code>
+    </MixedAssignment>
+    <MixedInferredReturnType>
+      <code><![CDATA[?string]]></code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement>
+      <code><![CDATA[$_ENV[$variable] ?? $default]]></code>
+    </MixedReturnStatement>
+    <PossiblyInvalidArgument>
+      <code><![CDATA[$attribute]]></code>
+      <code><![CDATA[$attribute]]></code>
+    </PossiblyInvalidArgument>
+  </file>
+  <file src="framework/src/Application/Application.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$middlewareClass]]></code>
+      <code><![CDATA[$routeMatch]]></code>
+      <code><![CDATA[array_map(
+                fn(string $middlewareClass) => $this->factoryManager->get($middlewareClass),
+                $this->middlewareClasses,
+            )]]></code>
+    </ArgumentTypeCoercion>
+    <UndefinedInterfaceMethod>
+      <code><![CDATA[flush]]></code>
+    </UndefinedInterfaceMethod>
+    <UnnecessaryVarAnnotation>
+      <code><![CDATA[BootstrapperInterface]]></code>
+    </UnnecessaryVarAnnotation>
+  </file>
+  <file src="framework/src/Application/Worker/FrankenPHPWorker.php">
+    <MissingClosureReturnType>
+      <code><![CDATA[static function () use ($application) {]]></code>
+    </MissingClosureReturnType>
+    <MixedAssignment>
+      <code><![CDATA[$keepRunning]]></code>
+    </MixedAssignment>
+    <UndefinedFunction>
+      <code><![CDATA[\frankenphp_handle_request($handler)]]></code>
+    </UndefinedFunction>
+    <UndefinedInterfaceMethod>
+      <code><![CDATA[flush]]></code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="framework/src/Bootstrappers/Traits/CanRegisterRoutes.php">
+    <MixedArgumentTypeCoercion>
+      <code><![CDATA[$routes]]></code>
+    </MixedArgumentTypeCoercion>
+  </file>
+  <file src="framework/src/Consoles/Console.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$commandClass]]></code>
+    </ArgumentTypeCoercion>
+    <MixedArgument>
+      <code><![CDATA[$commandClass]]></code>
+      <code><![CDATA[$commandClass]]></code>
+      <code><![CDATA[$commandClass]]></code>
+    </MixedArgument>
+    <MixedArrayOffset>
+      <code><![CDATA[$resolvedCommands[$commandName]]]></code>
+      <code><![CDATA[$resolvedCommands[$command]]]></code>
+    </MixedArrayOffset>
+    <MixedAssignment>
+      <code><![CDATA[$commandClass]]></code>
+      <code><![CDATA[$commandClass]]></code>
+      <code><![CDATA[$commandName]]></code>
+      <code><![CDATA[$resolvedCommands[$command]]]></code>
+    </MixedAssignment>
+    <PossiblyInvalidArgument>
+      <code><![CDATA[$commandClass]]></code>
+    </PossiblyInvalidArgument>
+    <PossiblyInvalidCast>
+      <code><![CDATA[$commandClass]]></code>
+    </PossiblyInvalidCast>
+    <PossiblyNullArgument>
+      <code><![CDATA[$commandClass]]></code>
+    </PossiblyNullArgument>
+    <RiskyTruthyFalsyComparison>
+      <code><![CDATA[!$resolvedCommand]]></code>
+    </RiskyTruthyFalsyComparison>
+    <UnnecessaryVarAnnotation>
+      <code><![CDATA[Command]]></code>
+      <code><![CDATA[CommandInterface]]></code>
+    </UnnecessaryVarAnnotation>
+  </file>
+  <file src="framework/src/Consoles/Outputs/ConsoleOutput.php">
+    <MixedInferredReturnType>
+      <code><![CDATA[string]]></code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement>
+      <code><![CDATA[$data]]></code>
+    </MixedReturnStatement>
+  </file>
+  <file src="framework/src/Consoles/Outputs/ConsoleOutputFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[(string) $configuration->get('console.outputClass', NullConsoleOutput::class)]]></code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="framework/src/Databases/DatabaseManager.php">
+    <DeprecatedFunction>
+      <code><![CDATA[array_column_of_list_or_map($filters, 'value')]]></code>
+    </DeprecatedFunction>
+    <LessSpecificReturnType>
+      <code><![CDATA[PDOStatement|false]]></code>
+    </LessSpecificReturnType>
+    <MixedArgument>
+      <code><![CDATA[$filter]]></code>
+      <code><![CDATA[$query]]></code>
+      <code><![CDATA[$values]]></code>
+    </MixedArgument>
+    <MixedArrayAccess>
+      <code><![CDATA[$column]]></code>
+      <code><![CDATA[$direction]]></code>
+    </MixedArrayAccess>
+    <MixedAssignment>
+      <code><![CDATA[$column]]></code>
+      <code><![CDATA[$connectOperator]]></code>
+      <code><![CDATA[$filter]]></code>
+      <code><![CDATA[$filter]]></code>
+      <code><![CDATA[$operator]]></code>
+      <code><![CDATA[$orderByColumn]]></code>
+      <code><![CDATA[$value]]></code>
+      <code><![CDATA[$value]]></code>
+      <code><![CDATA[$value]]></code>
+      <code><![CDATA[[$column, $direction]]]></code>
+    </MixedAssignment>
+    <MixedMethodCall>
+      <code><![CDATA[$model::getIdColumnName()]]></code>
+    </MixedMethodCall>
+    <MixedOperand>
+      <code><![CDATA[$column]]></code>
+      <code><![CDATA[$direction]]></code>
+    </MixedOperand>
+    <MixedReturnTypeCoercion>
+      <code><![CDATA[array<T>]]></code>
+      <code><![CDATA[maps_to_objects($rows, $class)]]></code>
+    </MixedReturnTypeCoercion>
+    <PossiblyFalseReference>
+      <code><![CDATA[fetchAll]]></code>
+    </PossiblyFalseReference>
+    <PossiblyUndefinedVariable>
+      <code><![CDATA[$model]]></code>
+    </PossiblyUndefinedVariable>
+    <UnnecessaryVarAnnotation>
+      <code><![CDATA[class-string<ModelInterface>]]></code>
+    </UnnecessaryVarAnnotation>
+    <UnusedForeachValue>
+      <code><![CDATA[$value]]></code>
+    </UnusedForeachValue>
+  </file>
+  <file src="framework/src/Databases/PDOFactory.php">
+    <MixedArgument>
+      <code><![CDATA[$databasePdo]]></code>
+      <code><![CDATA[$databasePdo]]></code>
+      <code><![CDATA[$databasePdo]]></code>
+      <code><![CDATA[$databasePdo]]></code>
+    </MixedArgument>
+  </file>
+  <file src="framework/src/Dependencies/DependencyResolver.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$class]]></code>
+      <code><![CDATA[$class]]></code>
+    </ArgumentTypeCoercion>
+    <MixedArgument>
+      <code><![CDATA[$typeName]]></code>
+    </MixedArgument>
+    <MixedAssignment>
+      <code><![CDATA[$typeName]]></code>
+    </MixedAssignment>
+    <UndefinedMethod>
+      <code><![CDATA[getName]]></code>
+    </UndefinedMethod>
+  </file>
+  <file src="framework/src/Emails/EmailManager.php">
+    <ForbiddenCode>
+      <code><![CDATA[var_dump("Sending email to $email with subject $subject and content: $content")]]></code>
+    </ForbiddenCode>
+  </file>
+  <file src="framework/src/Events/EventManagers/EventManager.php">
+    <InvalidPropertyAssignmentValue>
+      <code><![CDATA[$this->observables]]></code>
+    </InvalidPropertyAssignmentValue>
+    <MissingClosureParamType>
+      <code><![CDATA[$implements]]></code>
+    </MissingClosureParamType>
+    <MixedArrayAccess>
+      <code><![CDATA[$a['priority']]]></code>
+      <code><![CDATA[$b['priority']]]></code>
+    </MixedArrayAccess>
+    <MixedArrayOffset>
+      <code><![CDATA[$this->observables[$implements]]]></code>
+    </MixedArrayOffset>
+    <MixedAssignment>
+      <code><![CDATA[$observer]]></code>
+    </MixedAssignment>
+    <MixedFunctionCall>
+      <code><![CDATA[$observer($observable)]]></code>
+    </MixedFunctionCall>
+    <RedundantCondition>
+      <code><![CDATA[$observables]]></code>
+    </RedundantCondition>
+    <TypeDoesNotContainNull>
+      <code><![CDATA[[]]]></code>
+    </TypeDoesNotContainNull>
+  </file>
+  <file src="framework/src/Events/LifecycleEvents/BootstrapperBooted.php">
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$bootstrapper]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Events/LifecycleEvents/RequestCreated.php">
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$request]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Events/LifecycleEvents/ResponseCreated.php">
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$response]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Events/LifecycleEvents/ResponseSent.php">
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$response]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Events/LifecycleEvents/RouterCreated.php">
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$router]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Events/LifecycleEvents/RouterMatched.php">
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$routeMatch]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Events/Traits/CanOccur.php">
+    <MixedArgument>
+      <code><![CDATA[$parameters]]></code>
+      <code><![CDATA[$parameters]]></code>
+      <code><![CDATA[$parameters]]></code>
+      <code><![CDATA[$parameters]]></code>
+    </MixedArgument>
+    <TooManyArguments>
+      <code><![CDATA[new static(...$parameters)]]></code>
+    </TooManyArguments>
+    <UnsafeInstantiation>
+      <code><![CDATA[new static(...$parameters)]]></code>
+    </UnsafeInstantiation>
+  </file>
+  <file src="framework/src/Factories/AutowireFactory.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$dependency->name]]></code>
+    </ArgumentTypeCoercion>
+    <InvalidStringClass>
+      <code><![CDATA[new $class()]]></code>
+      <code><![CDATA[new $class(...$parameters)]]></code>
+    </InvalidStringClass>
+    <MixedAssignment>
+      <code><![CDATA[$parameters[]]]></code>
+    </MixedAssignment>
+  </file>
+  <file src="framework/src/FactoryManagers/FactoryManager.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[$this->createFactory(
+            $this->resolveFactory($class),
+        )->produce($class, $this)]]></code>
+      <code><![CDATA[$this->get($implementedBy->class)]]></code>
+      <code><![CDATA[$this->instances[$class]]]></code>
+      <code><![CDATA[$this->produce($implementedBy->class)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[object]]></code>
+      <code><![CDATA[object]]></code>
+    </InvalidReturnType>
+    <MixedInferredReturnType>
+      <code><![CDATA[object]]></code>
+      <code><![CDATA[string|Closure|null]]></code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement>
+      <code><![CDATA[$this->factoryClasses[$class]]]></code>
+      <code><![CDATA[($this->factoryClosure)($factoryProducer)]]></code>
+    </MixedReturnStatement>
+  </file>
+  <file src="framework/src/Http/Middlewares/MiddlewareChain.php">
+    <InvalidOperand>
+      <code><![CDATA[$index]]></code>
+    </InvalidOperand>
+    <PossiblyInvalidArrayOffset>
+      <code><![CDATA[$this->middlewares[$index + 1]]]></code>
+    </PossiblyInvalidArrayOffset>
+  </file>
+  <file src="framework/src/Http/Middlewares/Security/CsrfTokenMiddleware.php">
+    <MixedAssignment>
+      <code><![CDATA[$csrfToken]]></code>
+      <code><![CDATA[$sessionCsrfToken]]></code>
+    </MixedAssignment>
+  </file>
+  <file src="framework/src/Http/Requests/Request.php">
+    <MixedArgument>
+      <code><![CDATA[$this->getServer()->get('REQUEST_METHOD')]]></code>
+      <code><![CDATA[$this->getServer()->get('REQUEST_URI')]]></code>
+    </MixedArgument>
+    <PropertyNotSetInConstructor>
+      <code><![CDATA[$routeParameters]]></code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="framework/src/Http/Requests/Request/Cookies.php">
+    <MissingParamType>
+      <code><![CDATA[$cookies]]></code>
+    </MissingParamType>
+    <MixedArgument>
+      <code><![CDATA[$this->cookies]]></code>
+    </MixedArgument>
+    <MixedArrayAccess>
+      <code><![CDATA[$this->cookies[$key]]]></code>
+    </MixedArrayAccess>
+  </file>
+  <file src="framework/src/Http/Requests/Request/Session.php">
+    <MissingParamType>
+      <code><![CDATA[$session]]></code>
+    </MissingParamType>
+    <MixedArgument>
+      <code><![CDATA[$this->session]]></code>
+    </MixedArgument>
+    <MixedArrayAccess>
+      <code><![CDATA[$this->session[$key]]]></code>
+      <code><![CDATA[$this->session[$key]]]></code>
+    </MixedArrayAccess>
+    <MixedArrayAssignment>
+      <code><![CDATA[$this->session[$key]]]></code>
+    </MixedArrayAssignment>
+  </file>
+  <file src="framework/src/Http/Requests/ValidatableRequest.php">
+    <LessSpecificReturnStatement>
+      <code><![CDATA[instance($this->validatorClass())->validate($this->request->getPayload())]]></code>
+    </LessSpecificReturnStatement>
+    <MoreSpecificReturnType>
+      <code><![CDATA[Validation]]></code>
+    </MoreSpecificReturnType>
+  </file>
+  <file src="framework/src/Http/Routers/Router.php">
+    <UnnecessaryVarAnnotation>
+      <code><![CDATA[ControllerInterface]]></code>
+    </UnnecessaryVarAnnotation>
+  </file>
+  <file src="framework/src/Jobs/Traits/CanQueue.php">
+    <MixedArgument>
+      <code><![CDATA[$parameters]]></code>
+      <code><![CDATA[$parameters]]></code>
+      <code><![CDATA[$parameters]]></code>
+    </MixedArgument>
+    <TooManyArguments>
+      <code><![CDATA[new static(...$parameters)]]></code>
+    </TooManyArguments>
+    <UnsafeInstantiation>
+      <code><![CDATA[new static(...$parameters)]]></code>
+    </UnsafeInstantiation>
+  </file>
+  <file src="framework/src/Listeners/BenchmarkListener.php">
+    <InvalidArgument>
+      <code><![CDATA[LifecycleEventInterface::class]]></code>
+    </InvalidArgument>
+    <MixedArgument>
+      <code><![CDATA[($this->occurredTimes[$toEventClass] - $this->occurredTimes[$fromEventClass]) * 1000]]></code>
+    </MixedArgument>
+    <MixedOperand>
+      <code><![CDATA[$this->occurredTimes[$toEventClass]]]></code>
+    </MixedOperand>
+  </file>
+  <file src="framework/src/Providers/Commands/CommandProvider.php">
+    <MixedReturnTypeCoercion>
+      <code><![CDATA[$this->fromPathsRecursively(function (string $class) {
+            if (!is_subclass_of($class, CommandInterface::class)) {
+                return null;
+            }
+
+            return $class;
+        })]]></code>
+      <code><![CDATA[array]]></code>
+    </MixedReturnTypeCoercion>
+  </file>
+  <file src="framework/src/Providers/Observers/ObserverProvider.php">
+    <MixedReturnTypeCoercion>
+      <code><![CDATA[$this->fromPathsRecursively(static function (string $class) {
+            if (!is_subclass_of($class, ObserverInterface::class)) {
+                return null;
+            }
+
+            return instance($class);
+        })]]></code>
+      <code><![CDATA[array]]></code>
+    </MixedReturnTypeCoercion>
+  </file>
+  <file src="framework/src/Providers/PathsProvider.php">
+    <MixedArgument>
+      <code><![CDATA[$currentDirectory[0]]]></code>
+      <code><![CDATA[$currentDirectory[0]]]></code>
+      <code><![CDATA[$path]]></code>
+      <code><![CDATA[$path]]></code>
+    </MixedArgument>
+    <MixedArrayAccess>
+      <code><![CDATA[$currentDirectory[0]]]></code>
+      <code><![CDATA[$currentDirectory[0]]]></code>
+    </MixedArrayAccess>
+    <MixedAssignment>
+      <code><![CDATA[$currentDirectory]]></code>
+      <code><![CDATA[$path]]></code>
+      <code><![CDATA[$provided[]]]></code>
+    </MixedAssignment>
+    <PossiblyNullArgument>
+      <code><![CDATA[resolve_namespace($currentDirectory[0])]]></code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="framework/src/Providers/Routes/RouteProvider.php">
+    <MixedArgumentTypeCoercion>
+      <code><![CDATA[usort($routes, function (HttpRoute $a, HttpRoute $b) {
+            return $b->priority <=> $a->priority;
+        })]]></code>
+    </MixedArgumentTypeCoercion>
+    <MixedReturnTypeCoercion>
+      <code><![CDATA[$routes]]></code>
+      <code><![CDATA[array]]></code>
+    </MixedReturnTypeCoercion>
+  </file>
+  <file src="framework/src/Providers/ViewHelpers/ViewHelperPathsProvider.php">
+    <MixedReturnTypeCoercion>
+      <code><![CDATA[$this->fromPathsRecursively(function (string $class) {
+            if (!is_subclass_of($class, ViewHelperInterface::class)) {
+                return null;
+            }
+
+            return instance($class);
+        })]]></code>
+      <code><![CDATA[array]]></code>
+    </MixedReturnTypeCoercion>
+  </file>
+  <file src="framework/src/Queues/Database/DatabaseQueue.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[$queueRow->type::fromArray($queueRow->data)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[?QueueableInterface]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="framework/src/Queues/Database/QueueRow.php">
+    <MixedArgument>
+      <code><![CDATA[$data]]></code>
+      <code><![CDATA[$data]]></code>
+      <code><![CDATA[$data]]></code>
+      <code><![CDATA[$data]]></code>
+    </MixedArgument>
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$priority]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Sessions/FlashMessengers/FlashMessage.php">
+    <InvalidArgument>
+      <code><![CDATA[function (array $message) use ($type) {
+            return new self(array_shift($message), $type);
+        }]]></code>
+    </InvalidArgument>
+    <MixedArgument>
+      <code><![CDATA[array_shift($message)]]></code>
+    </MixedArgument>
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$text]]></code>
+      <code><![CDATA[$type]]></code>
+    </PossiblyUnusedProperty>
+  </file>
+  <file src="framework/src/Sessions/FlashMessengers/FlashMessenger.php">
+    <MixedArrayAssignment>
+      <code><![CDATA[$messages[]]]></code>
+    </MixedArrayAssignment>
+    <MixedAssignment>
+      <code><![CDATA[$messages]]></code>
+      <code><![CDATA[$messages]]></code>
+    </MixedAssignment>
+    <MixedInferredReturnType>
+      <code><![CDATA[array]]></code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement>
+      <code><![CDATA[$messages]]></code>
+      <code><![CDATA[$messages]]></code>
+    </MixedReturnStatement>
+  </file>
+  <file src="framework/src/Validations/Validation.php">
+    <MixedReturnTypeCoercion>
+      <code><![CDATA[$this->messages]]></code>
+      <code><![CDATA[array]]></code>
+    </MixedReturnTypeCoercion>
+  </file>
+  <file src="framework/src/Validations/Validators/ListValidator.php">
+    <MixedAssignment>
+      <code><![CDATA[$value]]></code>
+    </MixedAssignment>
+  </file>
+  <file src="framework/src/Validations/Validators/MapValidator.php">
+    <MixedArgument>
+      <code><![CDATA[$message]]></code>
+    </MixedArgument>
+    <MixedAssignment>
+      <code><![CDATA[$message]]></code>
+    </MixedAssignment>
+  </file>
+  <file src="framework/src/Views/ViewGenerator.php">
+    <MixedOperand>
+      <code><![CDATA[$view]]></code>
+      <code><![CDATA[$viewPath]]></code>
+    </MixedOperand>
+    <UnresolvableInclude>
+      <code><![CDATA[require $viewPath . '/' . $view . '.php']]></code>
+    </UnresolvableInclude>
+  </file>
+</files>

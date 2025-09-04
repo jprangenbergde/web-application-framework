@@ -1,0 +1,44 @@
+{
+    "name": "jprangenbergde/app",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Framework\\": "framework/src"
+        },
+        "files": [
+            "framework/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Jens Prangenberg",
+            "email": "mail@jpra.de"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-pdo": "*",
+        "flow-php/array-dot": "^0.9.2",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.15",
+        "friendsofphp/php-cs-fixer": "^3.63",
+        "phpstan/phpstan": "^1.12",
+        "qossmic/deptrac": "^2.0",
+        "rector/rector": "^1.2",
+        "roave/security-advisories": "dev-latest",
+        "symfony/var-dumper": "^7.1",
+        "vimeo/psalm": "^5.26"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "codestyle-fix": "php-cs-fixer fix",
+        "codestyle-check": [
+            "php-cs-fixer check",
+            "deptrac"
+        ]
+    }
+}

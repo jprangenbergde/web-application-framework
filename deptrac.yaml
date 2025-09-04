@@ -1,0 +1,19 @@
+deptrac:
+  paths:
+    - ./src
+    - ./framework
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: Framework
+      collectors:
+        - type: classLike
+          value: Framework\\.*
+    - name: Application
+      collectors:
+        - type: classLike
+          value: App\\.*
+  ruleset:
+    Application:
+      - Framework
+    Framework:

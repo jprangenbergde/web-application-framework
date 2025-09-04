@@ -1,0 +1,5 @@
+vendor
+.idea
+.deptrac.cache
+.env
+.php-cs-fixer.cache
