@@ -17,7 +17,7 @@ final readonly class OutboxRelayCommand implements CommandInterface
     ) {}
 
     /**
-     * @param array<string> $argv
+     * @param array<mixed> $argv
      */
     #[Override]
     public function run(array $argv, ConsoleOutputInterface $output): void

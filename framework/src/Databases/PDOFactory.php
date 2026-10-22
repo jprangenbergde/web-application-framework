@@ -23,13 +23,20 @@ final readonly class PDOFactory implements FactoryInterface
             throw new RuntimeException('Configuration `database.pdo` is not defined');
         }
 
-        $databasePdo['options'] = ($databasePdo['options'] ?? []) + [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        ];
+        $dsn = $databasePdo['dsn'] ?? null;
+        if (!is_string($dsn)) {
+            throw new RuntimeException('Configuration `database.pdo.dsn` must be a string');
+        }
+
+        $username = $databasePdo['username'] ?? null;
+        $password = $databasePdo['password'] ?? null;
+        $options = $databasePdo['options'] ?? [];
 
         return new PDO(
-            ...
-            $databasePdo
+            $dsn,
+            is_string($username) ? $username : null,
+            is_string($password) ? $password : null,
+            (is_array($options) ? $options : []) + [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
         );
     }
 }

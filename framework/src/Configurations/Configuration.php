@@ -7,7 +7,6 @@ namespace Framework\Configurations;
 use Framework\Factories\Attributes\ProducedBy;
 use Framework\FactoryManagers\Attributes\InstanceLocked;
 use Throwable;
-
 use Override;
 
 use function Flow\ArrayDot\array_dot_get;

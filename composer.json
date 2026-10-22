@@ -21,26 +21,26 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.5",
         "ext-pdo": "*",
-        "flow-php/array-dot": "^0.9.2",
-        "vlucas/phpdotenv": "^5.6"
+        "flow-php/array-dot": "^0.46",
+        "vlucas/phpdotenv": "^5.7"
     },
     "require-dev": {
-        "filp/whoops": "^2.15",
-        "friendsofphp/php-cs-fixer": "^3.63",
-        "phpstan/phpstan": "^1.12",
-        "phpunit/phpunit": "^10.5",
-        "qossmic/deptrac": "^2.0",
-        "rector/rector": "^1.2",
+        "deptrac/deptrac": "^4.7",
+        "filp/whoops": "^2.18",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.3",
+        "phpunit/phpunit": "^13.4",
+        "rector/rector": "^2.7",
         "roave/security-advisories": "dev-latest",
-        "symfony/var-dumper": "^7.1",
-        "vimeo/psalm": "^5.26"
+        "symfony/var-dumper": "^8.1",
+        "vimeo/psalm": "^6.20"
     },
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "8.3.36"
+            "php": "8.5.12"
         }
     },
     "scripts": {

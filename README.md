@@ -466,7 +466,7 @@ The FrankenPHP worker provides:
 ## 🛠️ Technical Stack
 
 ### Core Dependencies
-- **PHP 8.3+** with strict typing and modern features
+- **PHP 8.5+** with strict typing and modern features
 - **PDO** for database operations
 - **Flow PHP Array Dot** for configuration management
 - **Vlucas PHP Dotenv** for environment configuration
@@ -536,7 +536,7 @@ return [
 ## 🚀 Getting Started
 
 ### Prerequisites
-- PHP 8.3 or higher
+- PHP 8.5 or higher
 - Composer
 - SQLite (or other PDO-compatible database)
 

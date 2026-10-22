@@ -13,7 +13,5 @@ final readonly class OutboxMessage
         public int $id,
         public string $type,
         public array $payload,
-        public int $priority,
-        public int $attempts,
     ) {}
 }

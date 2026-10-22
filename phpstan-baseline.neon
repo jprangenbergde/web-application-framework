@@ -1,811 +1,997 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Function array_column_of_list_or_map\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Function array_column_of_list_or_map\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function array_column_of_list_or_map\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Function array_column_of_list_or_map\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function class_attribute\\(\\) should return \\(T of object\\)\\|null but returns object\\.$#"
+			message: '#^Function class_attribute\(\) should return \(T of object\)\|null but returns object\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function config\\(\\) should return Framework\\\\Configurations\\\\ConfigurationInterface but returns object\\.$#"
+			message: '#^Function config\(\) should return Framework\\Configurations\\ConfigurationInterface but returns object\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function maps_to_objects\\(\\) has parameter \\$maps with no value type specified in iterable type array\\.$#"
+			message: '#^Function env\(\) should return string\|null but returns mixed\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function maps_to_objects\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Function maps_to_objects\(\) has parameter \$maps with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function method_attribute\\(\\) should return \\(T of object\\)\\|null but returns object\\.$#"
+			message: '#^Function maps_to_objects\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function objects_to_maps\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Function method_attribute\(\) should return \(T of object\)\|null but returns object\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Function resolve_namespace\\(\\) never returns null so it can be removed from the return type\\.$#"
+			message: '#^Function objects_to_maps\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^PHPDoc tag @param for parameter \\$attribute with type class\\-string\\<T of object\\>\\|T of object is not subtype of native type string\\.$#"
+			message: '#^Function resolve_namespace\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: framework/functions.php
+
+		-
+			message: '#^Instanceof between Framework\\Interfaces\\ArrayableInterface and Framework\\Interfaces\\ArrayableInterface will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: framework/functions.php
+
+		-
+			message: '#^PHPDoc tag @param for parameter \$attribute with type class\-string\<T of object\>\|T of object is not subtype of native type string\.$#'
+			identifier: parameter.phpDocType
 			count: 2
 			path: framework/functions.php
 
 		-
-			message: "#^PHPDoc tag @return with type T is not subtype of native type object\\.$#"
+			message: '#^PHPDoc tag @return with type T is not subtype of native type object\.$#'
+			identifier: return.phpDocType
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\) expects class\\-string\\<object\\>, class\\-string\\<T\\> given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\) expects class\-string\<object\>, class\-string\<T\> given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Parameter \\#1 \\$objectOrClass of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, object\\|string given\\.$#"
+			message: '#^Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class\-string\<object\>\|object, object\|string given\.$#'
+			identifier: argument.type
 			count: 3
 			path: framework/functions.php
 
 		-
-			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, string\\|false given\\.$#"
+			message: '#^Parameter \#2 \$subject of function preg_match expects string, string\|false given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Template type T of function class_attribute\\(\\) is not referenced in a parameter\\.$#"
+			message: '#^Template type T of function class_attribute\(\) is not referenced in a parameter\.$#'
+			identifier: method.templateTypeNotInParameter
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Template type T of function method_attribute\\(\\) is not referenced in a parameter\\.$#"
+			message: '#^Template type T of function method_attribute\(\) is not referenced in a parameter\.$#'
+			identifier: method.templateTypeNotInParameter
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Unable to resolve the template type T in call to method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\)$#"
+			message: '#^Unable to resolve the template type T in call to method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\)$#'
+			identifier: argument.templateType
 			count: 1
 			path: framework/functions.php
 
 		-
-			message: "#^Call to an undefined method Framework\\\\FactoryManagers\\\\FactoryManagerInterface\\:\\:flush\\(\\)\\.$#"
+			message: '#^Call to an undefined method Framework\\FactoryManagers\\FactoryManagerInterface\:\:flush\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Application/Application.php
 
 		-
-			message: "#^Method Framework\\\\Application\\\\Application\\:\\:__construct\\(\\) has parameter \\$middlewareClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Application\\Application\:\:__construct\(\) has parameter \$middlewareClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Application/Application.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\) expects class\\-string\\<object\\>, string given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\) expects class\-string\<object\>, string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Application/Application.php
 
 		-
-			message: "#^Parameter \\#1 \\$middlewares of class Framework\\\\Http\\\\Middlewares\\\\MiddlewareChain constructor expects array\\<Framework\\\\Http\\\\Middlewares\\\\MiddlewareInterface\\>, array\\<object\\> given\\.$#"
+			message: '#^Parameter \#1 \$middlewares of class Framework\\Http\\Middlewares\\MiddlewareChain constructor expects array\<Framework\\Http\\Middlewares\\MiddlewareInterface\>, array\<object\> given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Application/Application.php
 
 		-
-			message: "#^Parameter \\#1 \\$routeMatch of method Framework\\\\Application\\\\Application\\:\\:handleRequest\\(\\) expects Framework\\\\Http\\\\Routers\\\\RouteMatch, Framework\\\\Http\\\\Routers\\\\RouteMatchInterface given\\.$#"
+			message: '#^Parameter \#1 \$routeMatch of method Framework\\Application\\Application\:\:handleRequest\(\) expects Framework\\Http\\Routers\\RouteMatch, Framework\\Http\\Routers\\RouteMatchInterface given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Application/Application.php
 
 		-
-			message: "#^Unable to resolve the template type T in call to method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\)$#"
+			message: '#^Unable to resolve the template type T in call to method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\)$#'
+			identifier: argument.templateType
 			count: 1
 			path: framework/src/Application/Application.php
 
 		-
-			message: "#^Call to an undefined method Framework\\\\Application\\\\ApplicationHandlerInterface\\:\\:flush\\(\\)\\.$#"
+			message: '#^Call to an undefined method Framework\\Application\\ApplicationHandlerInterface\:\:flush\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Application/Worker/FrankenPHPWorker.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:boot\\(\\)\\.$#"
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: framework/src/Application/Worker/FrankenPHPWorker.php
+
+		-
+			message: '#^Call to an undefined method object\:\:boot\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Bootstrappers/FinalizeBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FinalizeBootstrapper\\:\\:registerCommands\\(\\) has parameter \\$commandClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FinalizeBootstrapper\:\:registerCommands\(\) has parameter \$commandClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FinalizeBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FinalizeBootstrapper\\:\\:registerRoutes\\(\\) has parameter \\$routes with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FinalizeBootstrapper\:\:registerRoutes\(\) has parameter \$routes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FinalizeBootstrapper.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:boot\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:boot\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerConfigurations\\(\\) has parameter \\$configurations with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerConfigurations\(\) has parameter \$configurations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerFactories\\(\\) has parameter \\$factoryClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerFactories\(\) has parameter \$factoryClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$authConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$authConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$consoleConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$consoleConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$databaseConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$databaseConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$eventConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$eventConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$routerConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$routerConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Bootstrappers\\\\FrameworkBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$viewConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Bootstrappers\\FrameworkBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$viewConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Bootstrappers/FrameworkBootstrapper.php
 
 		-
-			message: "#^Method Framework\\\\Configurations\\\\Configuration\\:\\:__construct\\(\\) has parameter \\$configurations with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Configurations\\Configuration\:\:__construct\(\) has parameter \$configurations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Configurations/Configuration.php
 
 		-
-			message: "#^Method Framework\\\\Configurations\\\\Configuration\\:\\:register\\(\\) has parameter \\$configurations with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Configurations\\Configuration\:\:register\(\) has parameter \$configurations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Configurations/Configuration.php
 
 		-
-			message: "#^Method Framework\\\\Configurations\\\\ConfigurationRegistrarInterface\\:\\:register\\(\\) has parameter \\$configurations with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Configurations\\ConfigurationRegistrarInterface\:\:register\(\) has parameter \$configurations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Configurations/ConfigurationRegistrarInterface.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\CommandRegistrarInterface\\:\\:register\\(\\) has parameter \\$commandClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\CommandRegistrarInterface\:\:register\(\) has parameter \$commandClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/CommandRegistrarInterface.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\CommandRunnerInterface\\:\\:run\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\CommandRunnerInterface\:\:run\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/CommandRunnerInterface.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Commands\\\\CommandInterface\\:\\:run\\(\\) has parameter \\$argv with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Commands\\CommandInterface\:\:run\(\) has parameter \$argv with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Commands/CommandInterface.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Commands\\\\DequeueCommand\\:\\:run\\(\\) has parameter \\$argv with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Commands\\DequeueCommand\:\:run\(\) has parameter \$argv with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Commands/DequeueCommand.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:executeCommand\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:executeCommand\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:executeCommand\\(\\) has parameter \\$resolvedCommands with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:executeCommand\(\) has parameter \$resolvedCommands with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:listCommands\\(\\) has parameter \\$resolvedCommands with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:listCommands\(\) has parameter \$resolvedCommands with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:register\\(\\) has parameter \\$commandClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:register\(\) has parameter \$commandClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:resolveCommandClass\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:resolveCommandClass\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:resolveCommands\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:resolveCommands\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Console\\:\\:run\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Consoles\\Console\:\:run\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\) expects class\\-string\\<Framework\\\\Consoles\\\\Commands\\\\CommandInterface\\>, class\\-string\\<Framework\\\\Consoles\\\\Commands\\\\CommandInterface\\>\\|Framework\\\\Consoles\\\\Commands\\\\CommandInterface given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\) expects class\-string\<Framework\\Consoles\\Commands\\CommandInterface\>, class\-string\<Framework\\Consoles\\Commands\\CommandInterface\>\|Framework\\Consoles\\Commands\\CommandInterface given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Parameter \\#1 \\$objectOrClass of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: '#^Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Property Framework\\\\Consoles\\\\Console\\:\\:\\$commandClasses type has no value type specified in iterable type array\\.$#"
+			message: '#^Property Framework\\Consoles\\Console\:\:\$commandClasses type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Consoles/Console.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Outputs\\\\ConsoleOutput\\:\\:transform\\(\\) should return string but returns mixed\\.$#"
+			message: '#^Method Framework\\Consoles\\Outputs\\ConsoleOutput\:\:transform\(\) should return string but returns mixed\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/src/Consoles/Outputs/ConsoleOutput.php
 
 		-
-			message: "#^Method Framework\\\\Consoles\\\\Outputs\\\\ConsoleOutput\\:\\:transform\\(\\) should return string but returns string\\|false\\.$#"
+			message: '#^Method Framework\\Consoles\\Outputs\\ConsoleOutput\:\:transform\(\) should return string but returns string\|false\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/src/Consoles/Outputs/ConsoleOutput.php
 
 		-
-			message: "#^Cannot cast mixed to string\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 1
 			path: framework/src/Consoles/Outputs/ConsoleOutputFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\) expects class\\-string\\<object\\>, string given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\) expects class\-string\<object\>, string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Consoles/Outputs/ConsoleOutputFactory.php
 
 		-
-			message: "#^Unable to resolve the template type T in call to method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\)$#"
+			message: '#^Unable to resolve the template type T in call to method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\)$#'
+			identifier: argument.templateType
 			count: 1
 			path: framework/src/Consoles/Outputs/ConsoleOutputFactory.php
 
 		-
-			message: "#^Cannot call method fetchAll\\(\\) on PDOStatement\\|false\\.$#"
+			message: '#^Cannot call method fetchAll\(\) on PDOStatement\|false\.$#'
+			identifier: method.nonObject
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:createOrderByStatement\\(\\) has parameter \\$orderBy with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:createOrderByStatement\(\) has parameter \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:createSelectStatement\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:createSelectStatement\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:createSelectStatement\\(\\) has parameter \\$orderBy with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:createSelectStatement\(\) has parameter \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:createSelectStatement\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:createSelectStatement\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:createWhereStatement\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:createWhereStatement\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:executeSelectStatement\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:executeSelectStatement\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:executeSelectStatement\\(\\) has parameter \\$orderBy with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:executeSelectStatement\(\) has parameter \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:getFilterGroupStatement\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:getFilterGroupStatement\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:select\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:select\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:select\\(\\) has parameter \\$orderBy with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:select\(\) has parameter \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:selectAll\\(\\) has parameter \\$filters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:selectAll\(\) has parameter \$filters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Databases\\\\DatabaseManager\\:\\:selectAll\\(\\) has parameter \\$orderBy with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Databases\\DatabaseManager\:\:selectAll\(\) has parameter \$orderBy with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Method Framework\\\\Dependencies\\\\Dependency\\:\\:__construct\\(\\) has parameter \\$attributes with generic class ReflectionAttribute but does not specify its types\\: T$#"
+			message: '#^Part \$operator \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: framework/src/Databases/DatabaseManager.php
+
+		-
+			message: '#^Method Framework\\Dependencies\\Dependency\:\:__construct\(\) has parameter \$attributes with generic class ReflectionAttribute but does not specify its types\: T$#'
+			identifier: missingType.generics
 			count: 1
 			path: framework/src/Dependencies/Dependency.php
 
 		-
-			message: "#^Call to an undefined method ReflectionType\\:\\:getName\\(\\)\\.$#"
+			message: '#^Call to an undefined method ReflectionType\:\:getName\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Dependencies/DependencyResolver.php
 
 		-
-			message: "#^Parameter \\#1 \\$objectOrClass of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: '#^Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#'
+			identifier: argument.type
 			count: 2
 			path: framework/src/Dependencies/DependencyResolver.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:notify\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:notify\(\)\.$#'
+			identifier: method.notFound
 			count: 2
 			path: framework/src/Events/Event.php
 
 		-
-			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
 			count: 1
 			path: framework/src/Events/Event.php
 
 		-
-			message: "#^Empty array passed to foreach\\.$#"
+			message: '#^Empty array passed to foreach\.$#'
+			identifier: foreach.emptyArray
 			count: 1
 			path: framework/src/Events/EventManagers/EventManager.php
 
 		-
-			message: "#^Offset 'priority' does not exist on class\\-string\\<Framework\\\\Events\\\\ObservableInterface\\>\\.$#"
+			message: '#^Offset ''priority'' does not exist on class\-string\<Framework\\Events\\ObservableInterface\>\.$#'
+			identifier: offsetAccess.notFound
 			count: 2
 			path: framework/src/Events/EventManagers/EventManager.php
 
 		-
-			message: "#^Property Framework\\\\Events\\\\EventManagers\\\\EventManager\\:\\:\\$observables \\(array\\<array\\<class\\-string\\<Framework\\\\Events\\\\ObservableInterface\\>\\>\\>\\) does not accept array\\<array\\<array\\<string, \\(callable\\)\\|int\\>\\|class\\-string\\<Framework\\\\Events\\\\ObservableInterface\\>\\>\\>\\.$#"
+			message: '#^Property Framework\\Events\\EventManagers\\EventManager\:\:\$observables \(array\<array\<class\-string\<Framework\\Events\\ObservableInterface\>\>\>\) does not accept array\<array\<array\<string, \(callable\)\|int\>\|class\-string\<Framework\\Events\\ObservableInterface\>\>\>\.$#'
+			identifier: assign.propertyType
 			count: 1
 			path: framework/src/Events/EventManagers/EventManager.php
 
 		-
-			message: "#^Property Framework\\\\Events\\\\EventManagers\\\\EventManager\\:\\:\\$registeredObservers type has no value type specified in iterable type array\\.$#"
+			message: '#^Property Framework\\Events\\EventManagers\\EventManager\:\:\$registeredObservers type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Events/EventManagers/EventManager.php
 
 		-
-			message: "#^Variable \\$observables on left side of \\?\\? always exists and is not nullable\\.$#"
+			message: '#^Variable \$observables on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.variable
 			count: 1
 			path: framework/src/Events/EventManagers/EventManager.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\) expects class\\-string\\<object\\>, string given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\) expects class\-string\<object\>, string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Factories/AutowireFactory.php
 
 		-
-			message: "#^Unable to resolve the template type T in call to method Framework\\\\FactoryManagers\\\\FactoryProducerInterface\\:\\:get\\(\\)$#"
+			message: '#^Unable to resolve the template type T in call to method Framework\\FactoryManagers\\FactoryProducerInterface\:\:get\(\)$#'
+			identifier: argument.templateType
 			count: 1
 			path: framework/src/Factories/AutowireFactory.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$factoryClass\\.$#"
+			message: '#^Access to an undefined property object\:\:\$factoryClass\.$#'
+			identifier: property.notFound
 			count: 1
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Method Framework\\\\FactoryManagers\\\\FactoryManager\\:\\:__construct\\(\\) has parameter \\$factoryClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\FactoryManagers\\FactoryManager\:\:__construct\(\) has parameter \$factoryClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Method Framework\\\\FactoryManagers\\\\FactoryManager\\:\\:get\\(\\) should return T of object but returns object\\.$#"
+			message: '#^Method Framework\\FactoryManagers\\FactoryManager\:\:get\(\) should return T of object but returns object\.$#'
+			identifier: return.type
 			count: 2
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Method Framework\\\\FactoryManagers\\\\FactoryManager\\:\\:produce\\(\\) should return T of object but returns object\\.$#"
+			message: '#^Method Framework\\FactoryManagers\\FactoryManager\:\:produce\(\) should return T of object but returns object\.$#'
+			identifier: return.type
 			count: 2
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Method Framework\\\\FactoryManagers\\\\FactoryManager\\:\\:register\\(\\) has parameter \\$factoryClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\FactoryManagers\\FactoryManager\:\:register\(\) has parameter \$factoryClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryManager\\<T\\>\\:\\:get\\(\\) expects class\\-string\\<T\\>, class\\-string given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryManager\<T\>\:\:get\(\) expects class\-string\<T\>, class\-string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryManager\\<T\\>\\:\\:produce\\(\\) expects class\\-string\\<T\\>, class\\-string given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryManager\<T\>\:\:produce\(\) expects class\-string\<T\>, class\-string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Parameter \\#1 \\$class of method Framework\\\\FactoryManagers\\\\FactoryManager\\<T\\>\\:\\:produce\\(\\) expects class\\-string\\<T\\>, class\\-string\\<T of object\\> given\\.$#"
+			message: '#^Parameter \#1 \$class of method Framework\\FactoryManagers\\FactoryManager\<T\>\:\:produce\(\) expects class\-string\<T\>, class\-string\<T of object\> given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/FactoryManagers/FactoryManager.php
 
 		-
-			message: "#^Method Framework\\\\FactoryManagers\\\\FactoryRegistrarInterface\\:\\:register\\(\\) has parameter \\$factoryClasses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\FactoryManagers\\FactoryRegistrarInterface\:\:register\(\) has parameter \$factoryClasses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/FactoryManagers/FactoryRegistrarInterface.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\DecoratedRequest\\:\\:setRouteParameters\\(\\) has parameter \\$routeParameters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\DecoratedRequest\:\:setRouteParameters\(\) has parameter \$routeParameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/DecoratedRequest.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\:\\:setRouteParameters\\(\\) has parameter \\$routeParameters with no value type specified in iterable type array\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 1
 			path: framework/src/Http/Requests/Request.php
 
 		-
-			message: "#^Parameter \\#1 \\$url of function parse_url expects string, mixed given\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\:\:setRouteParameters\(\) has parameter \$routeParameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/Request.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of static method Framework\\\\Http\\\\HttpMethod\\:\\:tryFrom\\(\\) expects int\\|string, mixed given\\.$#"
+			message: '#^Parameter \#1 \$value of static method Framework\\Http\\HttpMethod\:\:tryFrom\(\) expects int\|string, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Http/Requests/Request.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\Cookies\\:\\:__construct\\(\\) has parameter \\$cookies with no type specified\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\Cookies\:\:__construct\(\) has parameter \$cookies with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: framework/src/Http/Requests/Request/Cookies.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\Payload\\:\\:__construct\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\Payload\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/Request/Payload.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\Payload\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\Payload\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/Request/Payload.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\QueryParameters\\:\\:__construct\\(\\) has parameter \\$queryParameters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\QueryParameters\:\:__construct\(\) has parameter \$queryParameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/Request/QueryParameters.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\RouteParameters\\:\\:__construct\\(\\) has parameter \\$routeParameters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\RouteParameters\:\:__construct\(\) has parameter \$routeParameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/Request/RouteParameters.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\Server\\:\\:__construct\\(\\) has parameter \\$server with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\Server\:\:__construct\(\) has parameter \$server with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/Request/Server.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\Request\\\\Session\\:\\:__construct\\(\\) has parameter \\$session with no type specified\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\Request\\Session\:\:__construct\(\) has parameter \$session with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: framework/src/Http/Requests/Request/Session.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Requests\\\\RequestInterface\\:\\:setRouteParameters\\(\\) has parameter \\$routeParameters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Requests\\RequestInterface\:\:setRouteParameters\(\) has parameter \$routeParameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Requests/RequestInterface.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:validate\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:validate\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Http/Requests/ValidatableRequest.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Routers\\\\RouteAssemblerInterface\\:\\:assemble\\(\\) has parameter \\$parameters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Routers\\RouteAssemblerInterface\:\:assemble\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Routers/RouteAssemblerInterface.php
 
 		-
-			message: "#^Method Framework\\\\Http\\\\Routers\\\\Router\\:\\:assemble\\(\\) has parameter \\$parameters with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Http\\Routers\\Router\:\:assemble\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Http/Routers/Router.php
 
 		-
-			message: "#^Cannot cast mixed to string\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 1
 			path: framework/src/Http/Routers/RouterFactory.php
 
 		-
-			message: "#^Method Framework\\\\Interfaces\\\\FromArrayInterface\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Interfaces\\FromArrayInterface\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Interfaces/FromArrayInterface.php
 
 		-
-			message: "#^Method Framework\\\\Interfaces\\\\ToArrayInterface\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Interfaces\\ToArrayInterface\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Interfaces/ToArrayInterface.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:queue\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:queue\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: framework/src/Jobs/Job.php
 
 		-
-			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
 			count: 1
 			path: framework/src/Jobs/Job.php
 
 		-
-			message: "#^Parameter \\#1 \\$observableClass of method Framework\\\\Events\\\\EventManagers\\\\EventAttacherInterface\\:\\:attach\\(\\) expects class\\-string\\<Framework\\\\Events\\\\ObservableInterface\\>, string given\\.$#"
+			message: '#^Parameter \#1 \$observableClass of method Framework\\Events\\EventManagers\\EventAttacherInterface\:\:attach\(\) expects class\-string\<Framework\\Events\\ObservableInterface\>, string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Listeners/BenchmarkListener.php
 
 		-
-			message: "#^Property Framework\\\\Listeners\\\\BenchmarkListener\\:\\:\\$occurredTimes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property Framework\\Listeners\\BenchmarkListener\:\:\$occurredTimes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Listeners/BenchmarkListener.php
 
 		-
-			message: "#^Method Framework\\\\Providers\\\\Commands\\\\CommandProvider\\:\\:__construct\\(\\) has parameter \\$paths with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Providers\\Commands\\CommandProvider\:\:__construct\(\) has parameter \$paths with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Providers/Commands/CommandProvider.php
 
 		-
-			message: "#^Method Framework\\\\Providers\\\\Observers\\\\ObserverProvider\\:\\:__construct\\(\\) has parameter \\$paths with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Providers\\Observers\\ObserverProvider\:\:__construct\(\) has parameter \$paths with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Providers/Observers/ObserverProvider.php
 
 		-
-			message: "#^Cannot access offset 0 on mixed\\.$#"
+			message: '#^Cannot access offset 0 on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
 			path: framework/src/Providers/PathsProvider.php
 
 		-
-			message: "#^Method Framework\\\\Providers\\\\PathsProvider\\:\\:__construct\\(\\) has parameter \\$paths with no value type specified in iterable type array\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 1
 			path: framework/src/Providers/PathsProvider.php
 
 		-
-			message: "#^Method Framework\\\\Providers\\\\PathsProvider\\:\\:fromPathsRecursively\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Providers\\PathsProvider\:\:__construct\(\) has parameter \$paths with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Providers/PathsProvider.php
 
 		-
-			message: "#^Parameter \\#1 \\$filePath of function resolve_namespace expects string, mixed given\\.$#"
+			message: '#^Method Framework\\Providers\\PathsProvider\:\:fromPathsRecursively\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Providers/PathsProvider.php
 
 		-
-			message: "#^Parameter \\#1 \\$path of function basename expects string, mixed given\\.$#"
+			message: '#^Parameter \#1 \$filePath of function resolve_namespace expects string, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Providers/PathsProvider.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$constraints\\.$#"
+			message: '#^Access to an undefined property object\:\:\$constraints\.$#'
+			identifier: property.notFound
 			count: 1
 			path: framework/src/Providers/Routes/RouteProvider.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$httpMethod\\.$#"
+			message: '#^Access to an undefined property object\:\:\$httpMethod\.$#'
+			identifier: property.notFound
 			count: 1
 			path: framework/src/Providers/Routes/RouteProvider.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$middlewareClasses\\.$#"
+			message: '#^Access to an undefined property object\:\:\$middlewareClasses\.$#'
+			identifier: property.notFound
 			count: 1
 			path: framework/src/Providers/Routes/RouteProvider.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$priority\\.$#"
+			message: '#^Access to an undefined property object\:\:\$priority\.$#'
+			identifier: property.notFound
 			count: 1
 			path: framework/src/Providers/Routes/RouteProvider.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$route\\.$#"
+			message: '#^Access to an undefined property object\:\:\$route\.$#'
+			identifier: property.notFound
 			count: 1
 			path: framework/src/Providers/Routes/RouteProvider.php
 
 		-
-			message: "#^Method Framework\\\\Providers\\\\Routes\\\\RouteProvider\\:\\:__construct\\(\\) has parameter \\$paths with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Providers\\Routes\\RouteProvider\:\:__construct\(\) has parameter \$paths with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Providers/Routes/RouteProvider.php
 
 		-
-			message: "#^Method Framework\\\\Providers\\\\ViewHelpers\\\\ViewHelperPathsProvider\\:\\:__construct\\(\\) has parameter \\$paths with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Providers\\ViewHelpers\\ViewHelperPathsProvider\:\:__construct\(\) has parameter \$paths with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Providers/ViewHelpers/ViewHelperPathsProvider.php
 
 		-
-			message: "#^Method Framework\\\\Queues\\\\Database\\\\QueueRow\\:\\:__construct\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Queues\\Database\\QueueRow\:\:__construct\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Queues/Database/QueueRow.php
 
 		-
-			message: "#^Method Framework\\\\Queues\\\\Database\\\\QueueRow\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Queues\\Database\\QueueRow\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Queues/Database/QueueRow.php
 
 		-
-			message: "#^Method Framework\\\\Queues\\\\Database\\\\QueueRow\\:\\:new\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Queues\\Database\\QueueRow\:\:new\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Queues/Database/QueueRow.php
 
 		-
-			message: "#^Method Framework\\\\Queues\\\\Database\\\\QueueRow\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Queues\\Database\\QueueRow\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Queues/Database/QueueRow.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(string\\)\\: mixed\\)\\|null, Closure\\(array\\)\\: Framework\\\\Sessions\\\\FlashMessengers\\\\FlashMessage given\\.$#"
+			message: '#^Parameter \#1 \$callback of function array_map expects \(callable\(string\)\: mixed\)\|null, Closure\(array\)\: Framework\\Sessions\\FlashMessengers\\FlashMessage given\.$#'
+			identifier: argument.type
 			count: 1
 			path: framework/src/Sessions/FlashMessengers/FlashMessage.php
 
 		-
-			message: "#^Cannot access an offset on mixed\\.$#"
+			message: '#^Cannot access an offset on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: framework/src/Sessions/FlashMessengers/FlashMessenger.php
 
 		-
-			message: "#^Cannot access offset 'messages' on mixed\\.$#"
+			message: '#^Cannot access offset ''messages'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
 			path: framework/src/Sessions/FlashMessengers/FlashMessenger.php
 
 		-
-			message: "#^Method Framework\\\\Sessions\\\\FlashMessengers\\\\FlashMessenger\\:\\:getMessages\\(\\) should return array\\<Framework\\\\Sessions\\\\FlashMessengers\\\\FlashMessage\\> but returns mixed\\.$#"
+			message: '#^Method Framework\\Sessions\\FlashMessengers\\FlashMessenger\:\:getMessages\(\) should return array\<Framework\\Sessions\\FlashMessengers\\FlashMessage\> but returns mixed\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/src/Sessions/FlashMessengers/FlashMessenger.php
 
 		-
-			message: "#^Method Framework\\\\Validations\\\\Validation\\:\\:__construct\\(\\) has parameter \\$messages with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Validations\\Validation\:\:__construct\(\) has parameter \$messages with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Validations/Validation.php
 
 		-
-			message: "#^Method Framework\\\\Validations\\\\Validation\\:\\:errors\\(\\) has parameter \\$messages with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Validations\\Validation\:\:errors\(\) has parameter \$messages with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Validations/Validation.php
 
 		-
-			message: "#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#"
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
 			count: 1
 			path: framework/src/Validations/Validators/ListValidator.php
 
 		-
-			message: "#^Method Framework\\\\Validations\\\\Validators\\\\MapValidator\\:\\:modifyMessages\\(\\) has parameter \\$messages with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Validations\\Validators\\MapValidator\:\:modifyMessages\(\) has parameter \$messages with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Validations/Validators/MapValidator.php
 
 		-
-			message: "#^Method Framework\\\\Validations\\\\Validators\\\\MapValidator\\:\\:modifyMessages\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Validations\\Validators\\MapValidator\:\:modifyMessages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Validations/Validators/MapValidator.php
 
 		-
-			message: "#^Anonymous function should return string but returns string\\|false\\.$#"
+			message: '#^Anonymous function should return string but returns string\|false\.$#'
+			identifier: return.type
 			count: 1
 			path: framework/src/Views/ViewGenerator.php
 
 		-
-			message: "#^Method Framework\\\\Views\\\\ViewGenerator\\:\\:generate\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Views\\ViewGenerator\:\:generate\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Views/ViewGenerator.php
 
 		-
-			message: "#^Method Framework\\\\Views\\\\ViewGeneratorInterface\\:\\:generate\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Views\\ViewGeneratorInterface\:\:generate\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Views/ViewGeneratorInterface.php
 
 		-
-			message: "#^Cannot cast mixed to string\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 1
 			path: framework/src/Views/ViewHelpers/CsrfToken.php
 
 		-
-			message: "#^Method Framework\\\\Views\\\\ViewHelpers\\\\GenerateView\\:\\:__invoke\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method Framework\\Views\\ViewHelpers\\GenerateView\:\:__invoke\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: framework/src/Views/ViewHelpers/GenerateView.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:boot\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:boot\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerConfigurations\\(\\) has parameter \\$configurations with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerConfigurations\(\) has parameter \$configurations with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$authConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$authConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$consoleConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$consoleConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$databaseConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$databaseConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$eventConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$eventConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$routerConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$routerConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Method App\\\\Bootstrappers\\\\AppBootstrapper\\:\\:registerNamedConfigurations\\(\\) has parameter \\$viewConfiguration with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Bootstrappers\\AppBootstrapper\:\:registerNamedConfigurations\(\) has parameter \$viewConfiguration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Bootstrappers/AppBootstrapper.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:notify\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:notify\(\)\.$#'
+			identifier: method.notFound
 			count: 2
 			path: src/Events/Registered.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:queue\\(\\)\\.$#"
+			message: '#^Call to an undefined method object\:\:queue\(\)\.$#'
+			identifier: method.notFound
 			count: 1
 			path: src/Events/Registered.php
 
 		-
-			message: "#^Parameter \\#1 \\$email of class App\\\\Events\\\\Registered constructor expects string, mixed given\\.$#"
+			message: '#^Parameter \#1 \$email of class App\\Events\\Registered constructor expects string, mixed given\.$#'
+			identifier: argument.type
 			count: 2
 			path: src/Events/Registered.php
 
 		-
-			message: "#^Cannot cast mixed to string\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 2
 			path: src/Http/Requests/Auth/LoginRequest.php
 
 		-
-			message: "#^Cannot cast mixed to string\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 4
 			path: src/Http/Requests/Auth/RegisterRequest.php
 
 		-
-			message: "#^Method App\\\\Models\\\\User\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Models\\User\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/User.php
 
 		-
-			message: "#^Method App\\\\Models\\\\User\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Models\\User\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/User.php
 
 		-
-			message: "#^Cannot cast mixed to string\\.$#"
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
 			count: 1
 			path: src/Services/Auth/LoginService.php

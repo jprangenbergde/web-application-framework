@@ -34,7 +34,7 @@ final readonly class OutboxStore
     public function fetchPending(int $limit, int $maxAttempts): array
     {
         $statement = $this->connection->prepare(
-            'SELECT id, type, payload, priority, attempts FROM outbox_messages
+            'SELECT id, type, payload FROM outbox_messages
              WHERE processed_at IS NULL AND attempts < ?
              ORDER BY priority DESC, id ASC
              LIMIT ' . max(1, $limit)
@@ -47,8 +47,6 @@ final readonly class OutboxStore
                 (int) $row['id'],
                 (string) $row['type'],
                 (array) json_decode((string) $row['payload'], true, flags: JSON_THROW_ON_ERROR),
-                (int) $row['priority'],
-                (int) $row['attempts'],
             );
         }
 
@@ -77,6 +75,6 @@ final readonly class OutboxStore
 
     private function now(): string
     {
-        return (new DateTimeImmutable())->format('Y-m-d H:i:s');
+        return new DateTimeImmutable()->format('Y-m-d H:i:s');
     }
 }

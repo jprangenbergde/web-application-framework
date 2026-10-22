@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0">
+<files psalm-version="6.20.1@376425b8e67b79773add388e16b4f6be5693dc87">
   <file src="framework/functions.php">
     <ArgumentTypeCoercion>
       <code><![CDATA[$attribute]]></code>
@@ -28,12 +28,12 @@
       <code><![CDATA[$filtersList]]></code>
       <code><![CDATA[$map]]></code>
     </MixedAssignment>
-    <MixedInferredReturnType>
-      <code><![CDATA[?string]]></code>
-    </MixedInferredReturnType>
     <MixedReturnStatement>
       <code><![CDATA[$_ENV[$variable] ?? $default]]></code>
     </MixedReturnStatement>
+    <PossiblyFalseArgument>
+      <code><![CDATA[$content]]></code>
+    </PossiblyFalseArgument>
     <PossiblyInvalidArgument>
       <code><![CDATA[$attribute]]></code>
       <code><![CDATA[$attribute]]></code>
@@ -56,9 +56,6 @@
     </UnnecessaryVarAnnotation>
   </file>
   <file src="framework/src/Application/Worker/FrankenPHPWorker.php">
-    <MissingClosureReturnType>
-      <code><![CDATA[static function () use ($application) {]]></code>
-    </MissingClosureReturnType>
     <MixedAssignment>
       <code><![CDATA[$keepRunning]]></code>
     </MixedAssignment>
@@ -111,9 +108,9 @@
     </UnnecessaryVarAnnotation>
   </file>
   <file src="framework/src/Consoles/Outputs/ConsoleOutput.php">
-    <MixedInferredReturnType>
-      <code><![CDATA[string]]></code>
-    </MixedInferredReturnType>
+    <FalsableReturnStatement>
+      <code><![CDATA[json_encode($data)]]></code>
+    </FalsableReturnStatement>
     <MixedReturnStatement>
       <code><![CDATA[$data]]></code>
     </MixedReturnStatement>
@@ -176,12 +173,11 @@
     </UnusedForeachValue>
   </file>
   <file src="framework/src/Databases/PDOFactory.php">
-    <MixedArgument>
-      <code><![CDATA[$databasePdo]]></code>
-      <code><![CDATA[$databasePdo]]></code>
-      <code><![CDATA[$databasePdo]]></code>
-      <code><![CDATA[$databasePdo]]></code>
-    </MixedArgument>
+    <MixedAssignment>
+      <code><![CDATA[$options]]></code>
+      <code><![CDATA[$password]]></code>
+      <code><![CDATA[$username]]></code>
+    </MixedAssignment>
   </file>
   <file src="framework/src/Dependencies/DependencyResolver.php">
     <ArgumentTypeCoercion>
@@ -223,6 +219,9 @@
     <MixedFunctionCall>
       <code><![CDATA[$observer($observable)]]></code>
     </MixedFunctionCall>
+    <PossiblyFalseArgument>
+      <code><![CDATA[class_implements($observable)]]></code>
+    </PossiblyFalseArgument>
     <RedundantCondition>
       <code><![CDATA[$observables]]></code>
     </RedundantCondition>
@@ -299,10 +298,9 @@
       <code><![CDATA[object]]></code>
       <code><![CDATA[object]]></code>
     </InvalidReturnType>
-    <MixedInferredReturnType>
-      <code><![CDATA[object]]></code>
-      <code><![CDATA[string|Closure|null]]></code>
-    </MixedInferredReturnType>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function produce(string $class, FactoryProducerInterface $factoryProducer): object]]></code>
+    </MissingOverrideAttribute>
     <MixedReturnStatement>
       <code><![CDATA[$this->factoryClasses[$class]]]></code>
       <code><![CDATA[($this->factoryClosure)($factoryProducer)]]></code>
@@ -325,7 +323,6 @@
   <file src="framework/src/Http/Requests/Request.php">
     <MixedArgument>
       <code><![CDATA[$this->getServer()->get('REQUEST_METHOD')]]></code>
-      <code><![CDATA[$this->getServer()->get('REQUEST_URI')]]></code>
     </MixedArgument>
     <PropertyNotSetInConstructor>
       <code><![CDATA[$routeParameters]]></code>
@@ -421,7 +418,6 @@
   <file src="framework/src/Providers/PathsProvider.php">
     <MixedArgument>
       <code><![CDATA[$currentDirectory[0]]]></code>
-      <code><![CDATA[$currentDirectory[0]]]></code>
       <code><![CDATA[$path]]></code>
       <code><![CDATA[$path]]></code>
     </MixedArgument>
@@ -440,9 +436,7 @@
   </file>
   <file src="framework/src/Providers/Routes/RouteProvider.php">
     <MixedArgumentTypeCoercion>
-      <code><![CDATA[usort($routes, function (HttpRoute $a, HttpRoute $b) {
-            return $b->priority <=> $a->priority;
-        })]]></code>
+      <code><![CDATA[usort($routes, fn(HttpRoute $a, HttpRoute $b) => $b->priority <=> $a->priority)]]></code>
     </MixedArgumentTypeCoercion>
     <MixedReturnTypeCoercion>
       <code><![CDATA[$routes]]></code>
@@ -461,14 +455,6 @@
       <code><![CDATA[array]]></code>
     </MixedReturnTypeCoercion>
   </file>
-  <file src="framework/src/Queues/Database/DatabaseQueue.php">
-    <InvalidReturnStatement>
-      <code><![CDATA[$queueRow->type::fromArray($queueRow->data)]]></code>
-    </InvalidReturnStatement>
-    <InvalidReturnType>
-      <code><![CDATA[?QueueableInterface]]></code>
-    </InvalidReturnType>
-  </file>
   <file src="framework/src/Queues/Database/QueueRow.php">
     <MixedArgument>
       <code><![CDATA[$data]]></code>
@@ -482,13 +468,14 @@
   </file>
   <file src="framework/src/Sessions/FlashMessengers/FlashMessage.php">
     <InvalidArgument>
-      <code><![CDATA[function (array $message) use ($type) {
-            return new self(array_shift($message), $type);
-        }]]></code>
+      <code><![CDATA[fn(array $message) => new self(array_shift($message), $type)]]></code>
     </InvalidArgument>
     <MixedArgument>
       <code><![CDATA[array_shift($message)]]></code>
     </MixedArgument>
+    <PossiblyNullArgument>
+      <code><![CDATA[array_shift($message)]]></code>
+    </PossiblyNullArgument>
     <PossiblyUnusedProperty>
       <code><![CDATA[$text]]></code>
       <code><![CDATA[$type]]></code>
@@ -502,9 +489,6 @@
       <code><![CDATA[$messages]]></code>
       <code><![CDATA[$messages]]></code>
     </MixedAssignment>
-    <MixedInferredReturnType>
-      <code><![CDATA[array]]></code>
-    </MixedInferredReturnType>
     <MixedReturnStatement>
       <code><![CDATA[$messages]]></code>
       <code><![CDATA[$messages]]></code>
@@ -517,6 +501,9 @@
     </MixedReturnTypeCoercion>
   </file>
   <file src="framework/src/Validations/Validators/ListValidator.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[ListValidator]]></code>
+    </ClassMustBeFinal>
     <MixedAssignment>
       <code><![CDATA[$value]]></code>
     </MixedAssignment>
@@ -529,7 +516,18 @@
       <code><![CDATA[$message]]></code>
     </MixedAssignment>
   </file>
+  <file src="framework/src/Validations/Validators/ValidatorChain.php">
+    <ClassMustBeFinal>
+      <code><![CDATA[ValidatorChain]]></code>
+    </ClassMustBeFinal>
+  </file>
   <file src="framework/src/Views/ViewGenerator.php">
+    <FalsableReturnStatement>
+      <code><![CDATA[ob_get_clean()]]></code>
+    </FalsableReturnStatement>
+    <InvalidFalsableReturnType>
+      <code><![CDATA[string]]></code>
+    </InvalidFalsableReturnType>
     <MixedOperand>
       <code><![CDATA[$view]]></code>
       <code><![CDATA[$viewPath]]></code>
