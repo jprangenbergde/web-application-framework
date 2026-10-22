@@ -356,11 +356,6 @@ parameters:
 			path: framework/src/Databases/DatabaseManager.php
 
 		-
-			message: "#^Parameter \\#1 \\$dsn of class PDO constructor expects string, mixed given\\.$#"
-			count: 1
-			path: framework/src/Databases/PDOFactory.php
-
-		-
 			message: "#^Method Framework\\\\Dependencies\\\\Dependency\\:\\:__construct\\(\\) has parameter \\$attributes with generic class ReflectionAttribute but does not specify its types\\: T$#"
 			count: 1
 			path: framework/src/Dependencies/Dependency.php
@@ -644,11 +639,6 @@ parameters:
 			message: "#^Method Framework\\\\Providers\\\\ViewHelpers\\\\ViewHelperPathsProvider\\:\\:__construct\\(\\) has parameter \\$paths with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: framework/src/Providers/ViewHelpers/ViewHelperPathsProvider.php
-
-		-
-			message: "#^Instanceof between class\\-string\\<Framework\\\\Queues\\\\QueueableInterface\\> and Framework\\\\Interfaces\\\\ArrayableInterface will always evaluate to false\\.$#"
-			count: 1
-			path: framework/src/Queues/Database/DatabaseQueue.php
 
 		-
 			message: "#^Method Framework\\\\Queues\\\\Database\\\\QueueRow\\:\\:__construct\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"

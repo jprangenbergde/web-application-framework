@@ -5,27 +5,24 @@ declare(strict_types=1);
 namespace Framework\Queues\Database;
 
 use Framework\Databases\DatabaseManager;
-use Framework\Interfaces\ArrayableInterface;
 use Framework\Queues\QueueableInterface;
+use Framework\Queues\QueueableSerializer;
 use Framework\Queues\QueueInterface;
 use Override;
 
 final readonly class DatabaseQueue implements QueueInterface
 {
     public function __construct(
-        private DatabaseManager $databaseManager
+        private DatabaseManager $databaseManager,
+        private QueueableSerializer $serializer,
     ) {}
 
     #[Override]
     public function append(QueueableInterface $queueable): void
     {
-        $this->databaseManager->save(
-            QueueRow::new(
-                $queueable->getQueuePriority()->value,
-                $queueable::class,
-                $queueable instanceof ArrayableInterface ? $queueable->toArray() : (array) $queueable
-            )
-        );
+        ['type' => $type, 'payload' => $payload, 'priority' => $priority] = $this->serializer->serialize($queueable);
+
+        $this->databaseManager->save(QueueRow::new($priority, $type, $payload));
     }
 
     #[Override]
@@ -38,10 +35,6 @@ final readonly class DatabaseQueue implements QueueInterface
 
         $this->databaseManager->delete($queueRow);
 
-        if ($queueRow->type instanceof ArrayableInterface) {
-            return $queueRow->type::fromArray($queueRow->data);
-        }
-
-        return new $queueRow->type(...$queueRow->data);
+        return $this->serializer->deserialize($queueRow->type, $queueRow->data);
     }
 }

@@ -377,6 +377,46 @@ The factory-based architecture allows easy addition of custom queue systems. The
 - **Queueable events** with `CanQueueObservables` trait
 - **Asynchronous event processing** for performance optimization
 
+#### **Transactions**
+`TransactionManagerInterface` bietet verschachtelbare Transaktionen (Savepoints ab der zweiten Ebene) und `afterCommit`-Hooks:
+
+```php
+$this->transactionManager->transactional(function (): void {
+    $this->userService->create($user);
+    Registered::queue($user->email, $user->firstName, $user->lastName); // landet atomar mit dem User in der DB
+});
+
+$this->transactionManager->afterCommit(fn() => $this->notifyExternalSystem()); // läuft erst nach dem äußersten Commit
+```
+
+- Exception im Callback → Rollback der jeweiligen Ebene, Exception wird weitergeworfen
+- `afterCommit`-Callbacks einer zurückgerollten Ebene verfallen; ohne Transaktion laufen sie sofort
+
+#### **Transactional Outbox**
+Ist `database.outbox.enabled` gesetzt, schreibt `QueueInterface::append()` (und damit `Job::queue()` / `Event::queue()`) zunächst in die Tabelle `outbox_messages` – in derselben Transaktion wie die Fachdaten. Der Relay leitet die Nachrichten anschließend an den konfigurierten Transport (Default: `DatabaseQueue`) weiter:
+
+```
+Request:  Fachdaten + outbox_messages  (eine Transaktion)
+Cron/Worker:  php bin/console.php outbox:relay   → Transport (queue_items)
+Worker:       php bin/console.php dequeue        → Job/Event ausführen
+```
+
+```php
+// config/database.php
+'outbox' => [
+    'enabled' => true,
+    'transport' => DatabaseQueue::class, // später z. B. eine Redis-/RabbitMQ-Queue
+    'batchSize' => 100,
+    'maxAttempts' => 5, // danach bleibt die Nachricht mit last_error liegen
+],
+```
+
+- Liegt der Transport in derselben Datenbank, sind Claim und Weiterleitung atomar (kein Verlust, keine Duplikate)
+- Bei externen Transporten gilt **at-least-once**: Consumer müssen idempotent sein
+- Das Schema liegt unter `framework/database/schema/*.sql` und muss einmalig angewendet werden:
+  `sqlite3 data/database.db < framework/database/schema/outbox_messages.sql`
+- Tests: `composer test`
+
 ### 7. Console Command System
 
 Attribute-based command-line interface:

@@ -23,6 +23,10 @@ final readonly class PDOFactory implements FactoryInterface
             throw new RuntimeException('Configuration `database.pdo` is not defined');
         }
 
+        $databasePdo['options'] = ($databasePdo['options'] ?? []) + [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ];
+
         return new PDO(
             ...
             $databasePdo

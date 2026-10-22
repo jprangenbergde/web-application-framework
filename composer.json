@@ -9,6 +9,11 @@
             "framework/functions.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Jens Prangenberg",
@@ -25,6 +30,7 @@
         "filp/whoops": "^2.15",
         "friendsofphp/php-cs-fixer": "^3.63",
         "phpstan/phpstan": "^1.12",
+        "phpunit/phpunit": "^10.5",
         "qossmic/deptrac": "^2.0",
         "rector/rector": "^1.2",
         "roave/security-advisories": "dev-latest",
@@ -39,6 +45,7 @@
         "codestyle-check": [
             "php-cs-fixer check",
             "deptrac"
-        ]
+        ],
+        "test": "phpunit"
     }
 }
