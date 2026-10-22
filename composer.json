@@ -38,7 +38,10 @@
         "vimeo/psalm": "^5.26"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "8.3.36"
+        }
     },
     "scripts": {
         "codestyle-fix": "php-cs-fixer fix",
